@@ -32,7 +32,7 @@ def pregunta_01():
     - Las palabras clave se separan por comas y con un solo espacio entre ellas.
     """
     # Leer archivo ignorando líneas en blanco iniciales
-    with open("files\input\clusters_report.txt", "r", encoding="utf-8") as file:
+    with open("files/input/clusters_report.txt", "r", encoding="utf-8") as file:
         lineas = file.readlines()
     
     # Extraer y limpiar los títulos de las columnas
@@ -51,7 +51,7 @@ def pregunta_01():
     
     # Leer el archivo 
     df = pd.read_fwf(
-        "files\input\clusters_report.txt", widths=[9, 16, 16, 80], 
+        "files/input/clusters_report.txt", widths=[9, 16, 16, 80], 
         header=None, names=cabeceras, skip_blank_lines=False,
         converters={cabeceras[2]: lambda x: x.rstrip(" %").replace(",", ".")},
     ).iloc[4:] 
